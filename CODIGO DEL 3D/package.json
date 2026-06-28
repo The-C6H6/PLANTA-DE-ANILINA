@@ -1,0 +1,8 @@
+{
+	"scripts": {
+		"build:standalone": "node build-standalone.cjs"
+	},
+	"dependencies": {
+		"three": "^0.184.0"
+	}
+}
