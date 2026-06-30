@@ -859,8 +859,23 @@ function addReactionTrain(parent, x, z) {
   trimHeater.position.set(27.4, 5, 0);
   skid.add(trimHeater);
 
-  addEquipmentTag(skid, 'E-101 / H-100', -9.4, 9.4, -9.2, palette.hazardBorder, { scale: [6.4, 1.7, 1] });
-  addEquipmentTag(skid, 'E-106 / E-100', -9.4, 9.4, 9.2, palette.nb, { scale: [6.4, 1.7, 1] });
+  addPipeRunToParent(skid, [
+    [-9.35, 5.3, -5.2],
+    [-9.35, 6.55, -5.2],
+    [-9, 6.55, -5.2],
+    [-9, 5.3, -5.2],
+  ], 0.22, palette.h2);
+
+  addPipeRunToParent(skid, [
+    [-1, 5.3, -5.2],
+    [2.4, 5.3, -5.2],
+    [2.4, 8.2, -5.6],
+    [4.8, 8.2, -5.6],
+  ], 0.22, palette.h2);
+
+  addEquipmentTag(skid, 'E-100', -13.5, 9.4, 9.2, palette.nb, { scale: [3.8, 1.55, 1] });
+  addEquipmentTag(skid, 'E-106', -5, 9.4, 9.2, palette.nb, { scale: [3.8, 1.55, 1] });
+  addEquipmentTag(skid, 'H-100', -5, 9.3, -9.2, palette.hazardBorder, { scale: [3.8, 1.55, 1] });
   addEquipmentTag(skid, 'CO-100', 19.2, 8.7, 5.4, palette.processBorder, { scale: [4.8, 1.55, 1] });
 
   parent.add(skid);
@@ -1125,6 +1140,8 @@ function addDistillationSection(parent, x, z) {
   addEquipmentTag(group, 'T-101', -12, 22.2, -1.2, palette.processBorder, { scale: [3.8, 1.45, 1] });
   addEquipmentTag(group, 'V-102', -2.2, 9.2, -11.2, palette.processBorder, { scale: [3.8, 1.45, 1] });
   addEquipmentTag(group, 'T-100', 13.4, 37.4, 7.2, palette.processBorder, { scale: [3.8, 1.45, 1] });
+  addEquipmentTag(group, 'E-104', -16.6, 8.4, 14.2, palette.processBorder, { scale: [3.8, 1.45, 1] });
+  addEquipmentTag(group, 'E-105', 4.4, 8.1, 15.6, palette.processBorder, { scale: [3.8, 1.45, 1] });
   addEquipmentTag(group, 'COND T-101', -17.8, 17.6, -14.8, palette.processBorder, { scale: [4.8, 1.45, 1] });
   addEquipmentTag(group, 'REB T-101', -18.6, 8.2, 15.6, palette.processBorder, { scale: [4.4, 1.45, 1] });
   addEquipmentTag(group, 'COND T-100', 20.6, 33.2, -8.9, palette.processBorder, { scale: [4.8, 1.45, 1] });
@@ -1442,7 +1459,14 @@ function addPipeNetwork() {
       color: palette.h2,
       radius: 0.32,
       points: [
-        [-58, 6.2, 0], [-28, 6.2, 0], [-28, 8.2, -24], [10, 8.2, -24], [10, 8.2, -49], [25.8, 8.2, -49.6],
+        [-58, 6.2, 0], [-28, 6.2, 0], [-28, 15.8, -22], [84, 15.8, -22], [84, 15.8, -45.8], [80.4, 15.8, -45.8], [80.4, 5.5, -45.8],
+      ],
+    },
+    {
+      color: palette.h2,
+      radius: 0.3,
+      points: [
+        [69.2, 5.5, -45.8], [69.2, 18.6, -45.8], [69.2, 18.6, -18.6], [11.7, 18.6, -18.6], [11.7, 18.6, -49.2], [11.7, 5.5, -49.2],
       ],
     },
     {
@@ -1467,10 +1491,10 @@ function addPipeNetwork() {
       ],
     },
     {
-      color: palette.feed,
+      color: palette.h2,
       radius: 0.42,
       points: [
-        [32.4, 9.2, -44.1], [40, 9.2, -44.1], [40, 12.2, -44], [55, 12.2, -44],
+        [32.4, 9.2, -44.1], [40, 9.2, -44.1], [40, 12.2, -44.1], [40, 12.2, -38.8], [55, 12.2, -38.8], [55, 12.2, -40.6],
       ],
     },
     {
